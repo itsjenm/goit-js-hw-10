@@ -10,6 +10,10 @@ body {
   background-color: #fafafa;
   color: #212121;
   line-height: 1.5;
+  background-image: radial-gradient(grey 1px, transparent 0);
+  background-size: 40px 40px;
+  background-position: -19px -19px;
+  
 }
 
 #search-box {
@@ -17,4 +21,15 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+}
+
+
+img {
+  width: 40px;
+  height: 40px;
+  padding-right: 5px;
+}
+
+ul {
+  list-style: none;
 }
