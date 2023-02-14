@@ -7,7 +7,7 @@ const countriesInfo = document.querySelector(".country-info");
 //write a function to return an array of countries 
 // Reduce the amount of data transferred by filtering and getting only (name, capital, population, flag svg, languages)
 export default function fetchCountries(name) {
-    fetch(`https://restcountries.com/v2/name/${name}`)
+    fetch(`https://restcountries.com/v2/name/${name}?fields=name,capital,population,flags,languages`)
     .then(response => {
         // console.log(response)
         if(name === '') {
@@ -34,6 +34,7 @@ export default function fetchCountries(name) {
 
     // render country name and image separately 
     function showCountryList (countries) {
+        const countriesList = document.querySelector(".country-list");
         const markup = countries.map((country) => {
         countriesList.innerHTML =  `
             <li class="country-list_item">
