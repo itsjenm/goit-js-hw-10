@@ -36,7 +36,7 @@ export default function fetchCountries(name) {
             // console.error('too many countries!')
            Notiflix.Notify.info('Too many matches found. Please enter a more specific name.')
         } else if (!totalCountries) {
-            return Notiflix.Notify.failure('Oops, there is no country with that name')
+            Notiflix.Notify.failure('Oops, there is no country with that name')
         }
 
         
