@@ -1,6 +1,5 @@
 import Notiflix from "notiflix";
 
-const search = document.querySelector('#search-box'); //search input 
 const countriesList = document.querySelector(".country-list");
 const countriesInfo = document.querySelector(".country-info");
 
@@ -20,6 +19,7 @@ export default function fetchCountries(name) {
         // As the user clears their input, clear the dom elements
         if (name.length - 1) {
             countriesInfo.innerHTML = "";
+            countriesList.innerHTML = "";
         } 
 
         // parse data into json
@@ -43,7 +43,6 @@ export default function fetchCountries(name) {
 
         
 
-
         if (totalCountries > 1 && totalCountries < 11) {
            showCountryWithFlag(countries)
         }
@@ -52,14 +51,6 @@ export default function fetchCountries(name) {
             showCountryInfo(countries)
         }
 
-
-    
-    // display country name and flag image
-    // Object.values returns an array of a given object's own property values
-        // showCountryWithFlag(Object.values(countries))
-        // // display the rest of the country data
-        // // Object.values returns an array of a given object's own property values
-        // showCountryInfo(Object.values(countries))
     })
     .catch(error => console.log(error))
 
@@ -92,19 +83,12 @@ export default function fetchCountries(name) {
             <ul>
                 <li><p>Capital: ${country.capital}</p></li>
                 <li><p>Population: ${country.population}</p></li>
-                <li><p>Languages: ${country.languages.map(languages => `<ol>${languages.name}</ol>`)}</p></li>
+                <li><p>Language(s): ${country.languages.map(languages => `<ul>${languages.name}</ul>`)}</p></li>
             </ul>
             `
         })
         .join('')
         return markup
     }
-
-    // function initialize(countries) {
-    //     let map = countries
-    //     let options = "";
-    //     map.forEach(country => options += `<option value="${country.alpha3Code}">${country.name}</option>`)
-    //     countriesList.innerHTML = options;
-    // }
  
 }

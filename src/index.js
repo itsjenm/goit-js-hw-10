@@ -1,7 +1,6 @@
 import './css/styles.css';
 import fetchCountries from './fetchCountries';
 const debounce = require('lodash.debounce');
-import Notiflix from 'notiflix';
 import debounce from 'lodash.debounce';
 
 
