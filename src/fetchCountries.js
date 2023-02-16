@@ -83,7 +83,7 @@ export default function fetchCountries(name) {
             <ul>
                 <li><p>Capital: ${country.capital}</p></li>
                 <li><p>Population: ${country.population}</p></li>
-                <li><p>Language(s): ${country.languages.map(languages => `<ul>${languages.name}</ul>`)}</p></li>
+                <li><p>Languages: ${country.languages.map(languages => " " + languages.name)}</p></li>
             </ul>
             `
         })
